@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>5000兆円ジェネレーター</title>
+    <style type="text/css">
+        @font-face {
+            font-family: 'mplus-1p-black';
+            src: url('mplus-1p-black.ttf') format('truetype');
+        }
+    </style>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <canvas id="canvas" width="1500px" height="150px"></canvas>
+    <input type="text" id="textbox" size="50" value="" spellcheck="false" oninput="redraw();">
+    <button type="button" onclick="saveImage();">画像を保存する</button>
+</body>
+
+</html>
