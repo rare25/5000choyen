@@ -31,17 +31,6 @@ function redraw() {
     }
   }
 
-  {
-    var width = ctx.measureText(text).width;
-    var grad = ctx.createLinearGradient(0, 0, width + 80, 0);
-    var value = width==0?1:1 - 0.1 * (380 / width);
-    grad.addColorStop(value<0?0:value, 'rgba(0,0,0,0)');
-    grad.addColorStop(1, 'rgba(0,0,0,255)');
-    ctx.strokeStyle = grad;
-    ctx.lineWidth = 28;
-    ctx.strokeText(text, posx + 7, posy + 2);
-  }
-
   //黒色
   {
     ctx.strokeStyle = "#000000";
