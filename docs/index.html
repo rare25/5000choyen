@@ -2,21 +2,35 @@
 <html lang="ja">
 
 <head>
-    <meta charset="utf-8">
-    <title>5000兆円ジェネレーター</title>
-    <style type="text/css">
-        @font-face {
-            font-family: 'mplus-1p-black';
-            src: url('mplus-1p-black.ttf') format('truetype');
-        }
-    </style>
-    <script src="main.js"></script>
+	<meta charset="utf-8">
+	<title>5000兆円ジェネレーター</title>
+	<style type="text/css">
+		@font-face {
+			font-family: 'mplus-1p-black';
+			src: url('mplus-1p-black.ttf') format('truetype');
+		}
+
+		div {
+			display: block;
+		}
+	</style>
+	<script src="main.js"></script>
 </head>
 
 <body>
-    <canvas id="canvas" width="1500px" height="150px"></canvas>
-    <input type="text" id="textbox" size="50" value="" spellcheck="false" oninput="redraw();">
-    <button type="button" onclick="saveImage();">画像を保存する</button>
+	<div>
+		<canvas id="canvas" width="1500px" height="150px"></canvas>
+	</div>
+	<div>
+		<input type="text" id="textbox" size="50" value="" spellcheck="false" oninput="redraw();">
+		<button type="button" onclick="saveImage();">画像を保存する</button>
+	</div>
+	<div>
+		5000兆円風の画像を生成するツールです。 文字によっては潰れてしまうことがあります。
+	</div>
+	<div>
+		作者Twitter:<a href="https://twitter.com/rarity_rare25">@rarity_rare25</a>
+	</div>
 </body>
 
 </html>
