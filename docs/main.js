@@ -9,9 +9,13 @@ window.onload = function () {
   ctx.setTransform(1,0,-0.4,1,0,0);
 };
 
-function saveImage(){
-    var data = canvas.toDataURL("image/png");
-    window.open(data);
+function saveImage() {
+  var a = document.createElement("a");
+  a.href = canvas.toDataURL("image/png");
+  a.setAttribute("download", "image.png");
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
 }
 
 function redraw() {
