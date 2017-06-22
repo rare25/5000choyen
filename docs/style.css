@@ -1,0 +1,16 @@
+@font-face {
+	font-family: 'notobk';
+	src: url('notobk.otf') format('opentype');
+}
+
+div {
+	display: block;
+}
+
+.font-load{
+    font-family: 'notobk';
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
