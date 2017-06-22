@@ -4,7 +4,7 @@ window.onload = function () {
   canvas = document.getElementById("canvas");
   textbox = document.getElementById("textbox");
   ctx = canvas.getContext('2d');
-  ctx.font = '100px notobk';
+  ctx.font = '100px notobk-subset';
   ctx.lineJoin = 'round';
   ctx.setTransform(1,0,-0.4,1,0,0);
 };
