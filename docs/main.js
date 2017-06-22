@@ -4,7 +4,7 @@ window.onload = function () {
   canvas = document.getElementById("canvas");
   textbox = document.getElementById("textbox");
   ctx = canvas.getContext('2d');
-  ctx.font = '100px mplus-1p-black';
+  ctx.font = '100px notobk';
   ctx.lineJoin = 'round';
   ctx.setTransform(1,0,-0.4,1,0,0);
 };
@@ -23,35 +23,56 @@ function redraw() {
   var posx = 70;
   var posy = 100;
   var text = textbox.value;
-  //銀色
-  for (var i = 0; i < 10; i++) {
+     //黒色
     {
-      var grad = ctx.createLinearGradient(0, 20, 0, 100);
-      grad.addColorStop(0, 'rgb(' + 10 * i + ', ' + 10 * i + ', ' + 10 * i + ')');
-
-      ctx.strokeStyle = grad;
-      ctx.lineWidth = 28;
-      ctx.strokeText(text, posx - 3 + i, posy + 2);
+      ctx.strokeStyle = "#000";
+      ctx.lineWidth = 22;
+      ctx.strokeText(text, posx + 4, posy + 4);
     }
+
+  //銀色
+  {
+    var grad = ctx.createLinearGradient(0, 24, 0, 122);
+    grad.addColorStop(0.0, 'rgb(0,15,36)');
+    grad.addColorStop(0.10, 'rgb(255,255,255)');
+    grad.addColorStop(0.18, 'rgb(55,58,59)');
+    grad.addColorStop(0.25, 'rgb(55,58,59)');
+    grad.addColorStop(0.5, 'rgb(200,200,200)');
+    grad.addColorStop(0.75, 'rgb(55,58,59)');
+    grad.addColorStop(0.85, 'rgb(25,20,31)');
+    grad.addColorStop(0.91, 'rgb(240,240,240)');
+    grad.addColorStop(0.95, 'rgb(166,175,194)');
+    grad.addColorStop(1, 'rgb(50,50,50)');
+    ctx.strokeStyle = grad;
+    ctx.lineWidth = 20;
+    ctx.strokeText(text, posx + 4, posy + 4);
   }
 
   //黒色
   {
     ctx.strokeStyle = "#000000";
-    ctx.lineWidth = 22;
+    ctx.lineWidth = 16;
     ctx.strokeText(text, posx, posy);
   }
+
   //金色
   {
     var grad = ctx.createLinearGradient(0, 20, 0, 100);
-    grad.addColorStop(0.3, 'rgb(255, 255, 255)');
-    grad.addColorStop(0.5, 'rgb(240, 180, 5)');
-    grad.addColorStop(0.8, 'rgb(89, 33, 0)');
-    grad.addColorStop(1, 'rgb(240, 180, 5)');
+    grad.addColorStop(0, 'rgb(253,241,0)');
+    grad.addColorStop(0.25, 'rgb(245,253,187)');
+    grad.addColorStop(0.4, 'rgb(255,255,255)');
+    grad.addColorStop(0.75, 'rgb(253,219,9)');
+    grad.addColorStop(0.9, 'rgb(127,53,0)');
+    grad.addColorStop(1, 'rgb(243,196,11)');
     ctx.strokeStyle = grad;
-    ctx.lineWidth = 19;
+    ctx.lineWidth = 10;
     ctx.strokeText(text, posx, posy);
   }
+
+  //黒
+  ctx.lineWidth = 6;
+  ctx.strokeStyle = '#000';
+  ctx.strokeText(text, posx+2, posy - 3);
 
   //白
   ctx.lineWidth = 6;
@@ -61,7 +82,7 @@ function redraw() {
   //赤
   {
     var grad = ctx.createLinearGradient(0, 20, 0, 100);
-    grad.addColorStop(0, 'rgb(230, 0, 0)');
+    grad.addColorStop(0, 'rgb(255, 100, 0)');
     grad.addColorStop(0.5, 'rgb(123, 0, 0)');
     grad.addColorStop(0.51, 'rgb(240, 0, 0)');
     grad.addColorStop(1, 'rgb(5, 0, 0)');
@@ -69,7 +90,6 @@ function redraw() {
     ctx.strokeStyle = grad;
     ctx.strokeText(text, posx, posy - 3);
   }
-
 
   //赤
   {
