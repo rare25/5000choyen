@@ -1,23 +1,17 @@
-var canvas, ctx , textbox;
+var canvas, ctx , textbox, result;
 
 window.onload = function () {
-  canvas = document.getElementById("canvas");
+  canvas = document.createElement("canvas");
+  canvas.width = 1500;
+  canvas.height = 150;
   textbox = document.getElementById("textbox");
+  result  = document.getElementById("result");
   ctx = canvas.getContext('2d');
-  ctx.font = '100px notobk-subset';
+  ctx.font = '100px Noto Sans JP';
   ctx.lineJoin = 'round';
 };
 
-function saveImage() {
-  var a = document.createElement("a");
-  a.href = canvas.toDataURL("image/png");
-  a.setAttribute("download", "image.png");
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-}
-
-function redraw() {
+function draw() {
   ctx.setTransform(1,0,0,1,0,0);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.setTransform(1,0,-0.4,1,0,0);
@@ -87,7 +81,7 @@ function redraw() {
     grad.addColorStop(0.5, 'rgb(123, 0, 0)');
     grad.addColorStop(0.51, 'rgb(240, 0, 0)');
     grad.addColorStop(1, 'rgb(5, 0, 0)');
-    ctx.lineWidth = 4;
+    ctx.lineWidth = 1;
     ctx.strokeStyle = grad;
     ctx.strokeText(text, posx, posy - 3);
   }
@@ -102,4 +96,15 @@ function redraw() {
     ctx.fillStyle = grad;
     ctx.fillText(text, posx, posy - 3);
   }
+}
+
+function loadFont() {
+  var text = textbox.value;
+  ctx.fillText(text, 0, 0);
+}
+
+function convertToImage(){
+  draw();
+  var data = canvas.toDataURL();
+  result.src = data;
 }

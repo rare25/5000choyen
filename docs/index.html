@@ -12,24 +12,24 @@
 	<meta name="twitter:url" content="https://rare25.github.io/5000choyen/" />
 	<meta name="twitter:creator" content="@rariry_rare25" /> 
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:900&display=swap&subset=japanese" rel="stylesheet">
 	<script src="main.js"></script>
 </head>
 
 <body>
 	<h1>5000兆円ジェネレーター</h1>
 	<div>
-		<canvas id="canvas" width="1500px" height="150px"></canvas>
+		<image id="result"></image>
 	</div>
 	<div>
-		<input type="text" id="textbox" size="50" value="" spellcheck="false" oninput="redraw();">
-		<button type="button" onclick="saveImage();">画像を保存する</button>
+		<input type="text" id="textbox" size="50" value="" spellcheck="false" oninput="loadFont();">
+		<button type="button" onclick="convertToImage();">画像を生成する</button>
 	</div>
-	<p>
-		5000兆円風の画像を生成するツールです。 文字によっては潰れてしまうことがあります。
-	</p>
-	<p>
-		iOSでは描画に不具合があります。(棘が出る等)
-	</p>
+	<p>5000兆円風の画像を生成するツールです。</p>
+	<p>保存方法<br>
+	PC:右クリック→名前を付けて画像を保存<br>
+	スマホ:長押し→画像を保存</p>
+	<p>iOSでは描画に不具合があります。(棘が出る等)</p>
 	<div>
 		作者Twitter:<a href="https://twitter.com/rarity_rare25">@rarity_rare25</a> 
 		ソース:<a href="https://github.com/Rare25/5000choyen">5000choyen</a>

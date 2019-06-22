@@ -1,14 +1,9 @@
-@font-face {
-	font-family: 'notobk-subset';
-	src: url('notobk-subset.otf') format('opentype');
-}
-
 div {
 	display: block;
 }
 
 .font-load{
-    font-family: 'notobk-subset';
+    font-family: 'Noto Sans JP';
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
